@@ -4,8 +4,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Validation {
-    private int key;
 
+    public Validation(){
+
+    }
     public String validate (String message, String ShiftKey){
         if(message==null||message.trim().isEmpty()){
             return "The Message or Cipher text must not be blank";
@@ -22,7 +24,7 @@ public class Validation {
         Pattern pattern = Pattern.compile("[^a-z]]",Pattern.CASE_INSENSITIVE);
         Matcher matcher =pattern.matcher(message);
         boolean specialCharacterPresent = matcher.find();
-        if(specialCharacterPresent){
+        if(!specialCharacterPresent){
 
             return "There are special Characters in the message/cipher text!";
         }
