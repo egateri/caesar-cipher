@@ -3,6 +3,12 @@ package com.moringaschool.student;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Author: Eliud Gateri
+ * Student: Moringa School
+ *
+ **/
+
 public class Validation {
 
     public Validation(){
@@ -21,10 +27,10 @@ public class Validation {
         catch (Exception exception){
             return "The Shift Key must be a number (integer)";
         }
-        Pattern pattern = Pattern.compile("[^a-z]]",Pattern.CASE_INSENSITIVE);
+        Pattern pattern = Pattern.compile("[^a-z]",Pattern.CASE_INSENSITIVE);
         Matcher matcher =pattern.matcher(message);
         boolean specialCharacterPresent = matcher.find();
-        if(!specialCharacterPresent){
+        if(specialCharacterPresent){
 
             return "There are special Characters in the message/cipher text!";
         }
