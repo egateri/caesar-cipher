@@ -37,10 +37,8 @@ public class Main {
                 else{
                     System.out.println("All your inputs were successfully validated: message "+message+ "  key  :"+shiftKey+ " you can proceed to encryption");
 
-                    cipher.setKey(Integer.parseInt(shiftKey));
-                    cipher.setMessage(message);
-                    cipher.encrypt();
-                    System.out.println(cipher.getCipherText());
+                    int key =Integer.parseInt(shiftKey);
+                    System.out.println(cipher.encrypt(message,key));
                     System.out.println("***************************************************************");
                 }
 
