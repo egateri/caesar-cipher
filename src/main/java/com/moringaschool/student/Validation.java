@@ -23,6 +23,9 @@ public class Validation {
         }
         try{
             int key = Integer.parseInt(ShiftKey);
+//            if(key==0){
+//                return "The key must be non-zero";
+//            }
         }
         catch (Exception exception){
             return "The Shift Key must be a number (integer)";

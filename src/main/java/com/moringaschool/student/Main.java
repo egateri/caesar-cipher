@@ -15,6 +15,7 @@ public class Main {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         Validation validation = new Validation();
+        Cipher cipher = new Cipher();
         System.out.println("***************************************************************");
         System.out.println("Welcome to CAESER CIPHER Program.");
 
@@ -34,7 +35,12 @@ public class Main {
                     System.out.println("***************************************************************");
                 }
                 else{
-                    System.out.println("All your inputs were successfully validated: message "+message+ "key  :"+shiftKey+ " you can proceed to encryption");
+                    System.out.println("All your inputs were successfully validated: message "+message+ "  key  :"+shiftKey+ " you can proceed to encryption");
+
+                    cipher.setKey(Integer.parseInt(shiftKey));
+                    cipher.setMessage(message);
+                    cipher.encrypt();
+                    System.out.println(cipher.getCipherText());
                     System.out.println("***************************************************************");
                 }
 
@@ -68,6 +74,6 @@ public class Main {
 
             }
 
-            ;}
+            }
     }
 }
