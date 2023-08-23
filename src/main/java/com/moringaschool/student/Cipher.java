@@ -12,7 +12,8 @@ public class Cipher {
 
     private String cipher;
 
-    private String alphabet ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private String upperAlphabet ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private String lowerAlphabet ="abcdefghijklmnopqrstuvwxyz";
 
 
     public Cipher() {
@@ -22,10 +23,19 @@ public class Cipher {
         setKey(shiftKey);
        String cipherText="";
         for(int i=0;i<getMessage().length();i++){
-            int characterPosition =alphabet.indexOf(getMessage().charAt(i));
-            int newCharacterPosition =(getKey()+characterPosition)%26;
-            char replacementCharacter =alphabet.charAt(newCharacterPosition);
-           cipherText +=replacementCharacter;
+            if(Character.isUpperCase(getMessage().charAt(i))){
+                int characterPosition =upperAlphabet.indexOf(getMessage().charAt(i));
+                int newCharacterPosition =(getKey()+characterPosition)%26;
+                char replacementCharacter =upperAlphabet.charAt(newCharacterPosition);
+                cipherText +=replacementCharacter;
+
+            }
+            else{
+                int characterPosition =lowerAlphabet.indexOf(getMessage().charAt(i));
+                int newCharacterPosition =(getKey()+characterPosition)%26;
+                char replacementCharacter =lowerAlphabet.charAt(newCharacterPosition);
+                cipherText +=replacementCharacter;
+            }
         }
      return cipherText;
 
@@ -35,13 +45,26 @@ public class Cipher {
         setKey(shiftKey);
         String messageText="";
         for(int i=0;i<getCipher().length();i++){
-            int characterPosition =alphabet.indexOf(getCipher().charAt(i));
-            int newCharacterPosition =(characterPosition-getKey())%26;
-            if(newCharacterPosition<0){
-                newCharacterPosition=26+newCharacterPosition;
+            if(Character.isUpperCase(getCipher().charAt(i))){
+                int characterPosition =upperAlphabet.indexOf(getCipher().charAt(i));
+                int newCharacterPosition =(characterPosition-getKey())%26;
+                if(newCharacterPosition<0){
+                    newCharacterPosition=26+newCharacterPosition;
+                }
+                char replacementCharacter =upperAlphabet.charAt(newCharacterPosition);
+                messageText +=replacementCharacter;
+
             }
-            char replacementCharacter =alphabet.charAt(newCharacterPosition);
-            messageText +=replacementCharacter;
+            else{
+                int characterPosition =lowerAlphabet.indexOf(getCipher().charAt(i));
+                int newCharacterPosition =(characterPosition-getKey())%26;
+                if(newCharacterPosition<0){
+                    newCharacterPosition=26+newCharacterPosition;
+                }
+                char replacementCharacter =lowerAlphabet.charAt(newCharacterPosition);
+                messageText +=replacementCharacter;
+            }
+
         }
         return messageText;
     }
