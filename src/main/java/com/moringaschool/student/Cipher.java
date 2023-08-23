@@ -35,8 +35,11 @@ public class Cipher {
         setKey(shiftKey);
         String messageText="";
         for(int i=0;i<getCipher().length();i++){
-            int characterPosition =alphabet.indexOf(getMessage().charAt(i));
-            int newCharacterPosition =(getKey()+characterPosition)%26;
+            int characterPosition =alphabet.indexOf(getCipher().charAt(i));
+            int newCharacterPosition =(characterPosition-getKey())%26;
+            if(newCharacterPosition<0){
+                newCharacterPosition=26+newCharacterPosition;
+            }
             char replacementCharacter =alphabet.charAt(newCharacterPosition);
             messageText +=replacementCharacter;
         }
@@ -68,7 +71,7 @@ public class Cipher {
         return cipher;
     }
 
-    public void setCipher(String cipherText) {
+    public void setCipher(String cipher) {
 
         this.cipher = cipher;
     }

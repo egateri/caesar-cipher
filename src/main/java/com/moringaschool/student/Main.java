@@ -56,6 +56,8 @@ public class Main {
                 }
                 else{
                     System.out.println("All your inputs were successfully validated: message "+message+ "key  :"+shiftKey+ " you can proceed to decryption");
+                    int key =Integer.parseInt(shiftKey);
+                    System.out.println(cipher.decrypt(message,key));
                     System.out.println("***************************************************************");
                 }
             }
