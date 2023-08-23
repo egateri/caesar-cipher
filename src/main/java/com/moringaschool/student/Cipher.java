@@ -25,6 +25,7 @@ public class Cipher {
     }
 
     public String getMessage() {
+
         return message;
     }
 
@@ -38,5 +39,9 @@ public class Cipher {
 
     public void setCipherText(String cipherText) {
         this.cipherText = cipherText;
+    }
+
+    public void encrypt(){
+        setCipherText(getMessage());
     }
 }
