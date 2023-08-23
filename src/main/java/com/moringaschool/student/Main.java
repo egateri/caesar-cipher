@@ -18,6 +18,10 @@ public class Main {
         Cipher cipher = new Cipher();
         System.out.println("***************************************************************");
         System.out.println("Welcome to CAESER CIPHER Program.");
+        System.out.println("This Program will help encrypt a message or decrypt a message using a key.");
+        System.out.println("The message and cipher text must be Alphabetic Characters while the key is a number.");
+        System.out.println("Both Uppercase and LowerCase Alphabets Supported.");
+        System.out.println("***************************************************************");
 
         while(true){
             System.out.println("Chose what you would like to do from below options: Encrypt or Decrypt");
@@ -33,12 +37,27 @@ public class Main {
                 if(validate!=null){
                     System.out.println(validate);
                     System.out.println("***************************************************************");
+                    System.out.println("Choose if you would like to continue or exit. Type c to continue or e to exit.");
+                    String nextStep= scanner.nextLine();
+                    if(nextStep.startsWith("e")){
+                        System.out.println("Goodbye and thank you for using our Caeser Cipher Program!");
+                        System.out.println("***************************************************************");
+                        break;
+                    }
+                    System.out.println("***************************************************************");
                 }
                 else{
-                    System.out.println("All your inputs were successfully validated: message "+message+ "  key  :"+shiftKey+ " you can proceed to encryption");
-
-                    int key =Integer.parseInt(shiftKey);
+                    System.out.println("Your message was encrypted as below:");
+                    int key =Integer.parseInt(shiftKey.trim());
                     System.out.println(cipher.encrypt(message,key));
+                    System.out.println("***************************************************************");
+                    System.out.println("Choose if you would like to continue or exit. Type c to continue or e to exit.");
+                    String nextStep= scanner.nextLine();
+                    if(nextStep.startsWith("e")){
+                        System.out.println("Goodbye and thank you for using our Caeser Cipher Program!");
+                        System.out.println("***************************************************************");
+                        break;
+                    }
                     System.out.println("***************************************************************");
                 }
 
@@ -53,11 +72,27 @@ public class Main {
                 if(validate!=null){
                     System.out.println(validate);
                     System.out.println("***************************************************************");
+                    System.out.println("Choose if you would like to continue or exit. Type c to continue or e to exit.");
+                    String nextStep= scanner.nextLine();
+                    if(nextStep.startsWith("e")){
+                        System.out.println("Goodbye and thank you for using our Caeser Cipher Program!");
+                        System.out.println("***************************************************************");
+                        break;
+                    }
+                    System.out.println("***************************************************************");
                 }
                 else{
-                    System.out.println("All your inputs were successfully validated: message "+message+ "key  :"+shiftKey+ " you can proceed to decryption");
-                    int key =Integer.parseInt(shiftKey);
+                    System.out.println("Your Cipher Text was decrypted as below:");
+                    int key =Integer.parseInt(shiftKey.trim());
                     System.out.println(cipher.decrypt(message,key));
+                    System.out.println("***************************************************************");
+                    System.out.println("Choose if you would like to continue or exit. Type c to continue or e to exit.");
+                    String nextStep= scanner.nextLine();
+                    if(nextStep.startsWith("e")){
+                        System.out.println("Goodbye and thank you for using our Caeser Cipher Program!");
+                        System.out.println("***************************************************************");
+                        break;
+                    }
                     System.out.println("***************************************************************");
                 }
             }
@@ -71,7 +106,7 @@ public class Main {
                     System.out.println("***************************************************************");
                     break;
                 }
-
+                System.out.println("***************************************************************");
             }
 
             }

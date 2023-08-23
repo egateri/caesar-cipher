@@ -19,7 +19,7 @@ public class Cipher {
     public Cipher() {
     }
     public String encrypt(String plainText, int shiftKey){
-        setMessage(plainText);
+        setMessage(plainText.trim());
         setKey(shiftKey);
        String cipherText="";
         for(int i=0;i<getMessage().length();i++){
@@ -41,7 +41,7 @@ public class Cipher {
 
     }
     public String decrypt(String cipherText, int shiftKey){
-        setCipher(cipherText);
+        setCipher(cipherText.trim());
         setKey(shiftKey);
         String messageText="";
         for(int i=0;i<getCipher().length();i++){
