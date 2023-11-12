@@ -12,6 +12,7 @@ public class CipherTests {
     public void encryption_with_lower_case_should_pass(){
         String value = cipherTest.encrypt("abcd",1);
         Assertions.assertEquals("bcde",value);
+       
     }
     @Test
     public void encryption_with_upper_case_should_pass(){
