@@ -13,7 +13,7 @@ Caeser Cipher Project is developed using [JAVA][1] to create a program to encryp
 
 
 ### Live Link
-
+ This program is to be run on command line and is not available on live environment.
 
 ### BDD
 As a user, I would like to;
@@ -33,18 +33,115 @@ As a user, I would like to;
 
 
 ### Dependencies
-1. JDK 11 Release _https://www.oracle.com/ke/java/technologies/javase/jdk11-archive-downloads.html_
-1. IntelliJ IDEA _https://www.jetbrains.com/idea/download/?section=linux_
-1. Gradle Build Tool 8.2  _https://docs.gradle.org/8.2/release-notes.html?_gl=1*zfbn5*_ga*MTU1NjA5MzMwLjE2OTI2ODQ0ODk.*_ga_7W7NC6YNPT*MTY5MjY4NDQ5MC4xLjEuMTY5MjY4NDU4MS41Ny4wLjA_
-2. 
+1. [JDK 11 Release][1]
+1. [IntelliJ IDEA][2]
+1. [Gradle Build Tool 8.2][3]
+
+[1]: <https://www.oracle.com/ke/java/technologies/javase/jdk11-archive-downloads.html/> "Java 11"
+[2]: <https://www.jetbrains.com/idea/download/?section=linux/> "Intellij IDEA"
+[3]: <https://docs.gradle.org/8.2/release-notes.html?_gl=1*zfbn5*_ga*MTU1NjA5MzMwLjE2OTI2ODQ0ODk.*_ga_7W7NC6YNPT*MTY5MjY4NDQ5MC4xLjEuMTY5MjY4NDU4MS41Ny4wLjA/> "Gradle"
+
 
 ### Setup and Installations Instructions
-1. To use the Caeser Cipher Program:
-    - Access 
-    -
-2. To develop a similar Caeser Cipher Program or make improvements:
-    - Ensure 
-    -
+
+Follow these steps to install and run the project locally on your machine:
+
+Ensure Java is installed on your computer  - JDK 11 or JDK 17:
+
+```bash
+java --version
+```
+
+Ensure Gradle is installed on your computer:
+
+```bash
+ gradle -v
+```
+
+Clone the repo and navigate to the project folder:
+
+```bash
+git clone https://github.com/egateri/caesar-cipher.git
+cd caesar-cipher
+```
+
+Build the application using gradle:
+
+```bash
+gradle build 
+#For linux computers use below command to build the application
+./gradlew build  
+```
+
+Run the application:
+
+```bash
+java -jar build/libs/caesercipher-1.0-SNAPSHOT.jar 
+
+```  
+Test the application by following the command prompts
+
+### Dockerize the Application
+
+Follow these steps to dockerize the application and run the image on container environment:
+
+Ensure Docker is installed:
+
+```bash
+docker -v
+```
+
+Clone the repo and navigate to the project folder:
+
+```bash
+git clone https://github.com/egateri/caesar-cipher.git
+cd caesar-cipher
+```
+
+Build the docker image:
+
+```bash
+docker build -t caesercipher:1.0 . 
+```
+
+Run the application in a container environment:
+
+```bash
+docker run -d  caesercipher:1.0
+
+```  
+Test the application by following the command prompts
+
+### Run the Application from IntelliJ IDEA
+
+Follow these steps run the program in Intellij IDEA
+
+Ensure Java is installed on your computer  - JDK 11 or JDK 17:
+
+```bash
+java --version
+```
+
+Ensure Gradle is installed on your computer:
+
+```bash
+ gradle -v
+```
+
+Clone the repo and navigate to the project folder:
+
+```bash
+git clone https://github.com/egateri/caesar-cipher.git
+```
+
+Open the clone project using Intellij IDEA:
+
+Install all the project dependencies by refreshing gradle
+
+Use the run button the test the application.
+
+Test the application by following the command prompts. Enter wrong input types and values
+
 
 ### Contact Information
 - Name : Eliud Gateri
@@ -53,11 +150,4 @@ As a user, I would like to;
 - Phone : 0700 XXX 000
 
 ###  License and Copyright Information
-#### MIT License
-Copyright (c) 2023 Eliud Gateri
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
+[MIT](LICENSE)
